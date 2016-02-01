@@ -14,7 +14,7 @@ Assuming the command above works, you are good to go!  If not, please see
 Now you have [.NET Core installed](../001-Getting-Started/), let's create our first C# program.
 To begin we need to create a folder to store our C# code project in, i.e.
 ```
- mkdir ~/source/dotnet/002-hello
+ mkdir -p ~/source/dotnet/002-hello
  cd ~/source/dotnet/002-hello
 ```
 Then we want to create a new C# project in it
