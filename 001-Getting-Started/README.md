@@ -16,7 +16,7 @@ with ```yum``` please do the following:
 ```
  1. Download this alpha build (which is known good at the time of writing):
 ```
- wget https://dotnetcli.blob.core.windows.net/dotnet/beta/Binaries/1.0.0.001088/dotnet-centos-x64.1.0.0.001088.tar.gz)
+ wget https://dotnetcli.blob.core.windows.net/dotnet/beta/Binaries/1.0.0.001088/dotnet-centos-x64.1.0.0.001088.tar.gz
 ```
  1. Unpack the build somewhere (e.g. /opt/dotnet)
 ```
