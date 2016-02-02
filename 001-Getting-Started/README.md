@@ -5,7 +5,7 @@ First of all we want to get .NET Core installed on your environment.
 For instructions see http://dotnet.github.io/getting-started/ and follow the instructions for
 the platform of your choice.
 
-## Getting started on RedHat Enterprise Linux, Fedora or CentOS
+## Getting started on RedHat Enterprise Linux (RHEL) or CentOS
 
 At the time of writing, the RPM packages for .NET Core are not publicly available. Therefore to install
 with ```yum``` please do the following:
