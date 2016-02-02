@@ -17,7 +17,18 @@ but have experience with other programming languages.
 ## Workshop Contents
 
  1. [Getting Started](001-Getting-Started/) - Installing pre-requisites and getting .NET Core installed on your system
- 1. [Hello C# World](002-Hello-CSharp/) - Learn the structure of a basic C# program
+ 2. [Hello C# World](002-Hello-CSharp/) - Learn the structure of a basic C# program
+ 3. [C# Language Basics](003-Language-Basics/) - Learn the basics of the C# language such as variables, expressions
+    control flow, loops, control flow, generics and more.
  
 More to follow...
 
+## Additional Reading
+For more information and additional tutorials related to learning C# on Linux see the following. Note that the
+.NET team are currently moving from several command line tools (such as `dnx`) to the `dotnet` command
+therefore some of the tutorials may be a little out of date at the time of writing.
+ - [.NET Core Documentation](http://dotnet.github.io/docs/index.html)
+ - [Understanding the .NET Core Platform](http://dotnet.github.io/docs/concepts/primer.html)
+ - [Learn C#](http://dotnet.github.io/docs/languages/csharp/index.html)
+ - [Web Applications with ASP.NET Core](http://docs.asp.net/en/latest/index.html)
+ 
