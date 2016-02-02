@@ -163,7 +163,7 @@ program, how to run the application and how to change the exit code of the proce
  - [project.lock.json](https://github.com/aspnet/Home/wiki/Lock-file)
 
 ---
- - Next: TODO
+ - Next: [Tutorial 2 - C# Language Basics](../003-Language-Basics/)
  - Previous: [Tutorial 1 - Getting Started with C# on Linux](../001-Getting-Started/)
  - Back to [Table of Contents](../README.md)
 

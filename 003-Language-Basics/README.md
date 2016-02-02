@@ -319,6 +319,8 @@ as we will see later.
   3. Display a count of the number of names that you have displayed and the sum total of characters in the names.
 
 ## Conclusion
+In this tutorial we learnt the basics of the C# syntax, how to declare variables and classes and perform operations
+on them. In the following tutorial we will learn more about properties in C#.
 
 ## Additional Information
  - [.NET Code Coding Style Guide](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md)
