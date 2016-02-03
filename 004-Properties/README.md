@@ -371,7 +371,7 @@ null conditional operators and learned how to implement the `INotifyPropertyChan
  - [`nameof` operator](https://msdn.microsoft.com/en-us/library/dn986596.aspx)
 
 ---
- - Next: [Tutorial 5 - TODO](../README.md)
+ - Next: [Tutorial 5 - Delegates and Lambda Expressions](../005-Lambdas/)
  - Previous: [Tutorial 1 - C# Language Basics](../003-Language-Basics/)
  - Back to [Table of Contents](../README.md)
 
