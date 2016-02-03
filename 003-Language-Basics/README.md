@@ -315,7 +315,9 @@ as we will see later.
 ## Exercises
   1. Create a HelloWorld application in .NET and allow a user to pass in a name to say hello to when running the
      application by typing `dotnet run Alice`
+
   2. Modify your HelloWorld application to say hello to multiple names when passed in by typing `dotnet run Alice Bob`.
+
   3. Display a count of the number of names that you have displayed and the sum total of characters in the names.
 
 ## Conclusion
