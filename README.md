@@ -36,4 +36,13 @@ therefore some of the tutorials may be a little out of date at the time of writi
  - [Understanding the .NET Core Platform](http://dotnet.github.io/docs/concepts/primer.html)
  - [Learn C#](http://dotnet.github.io/docs/languages/csharp/index.html)
  - [Web Applications with ASP.NET Core](http://docs.asp.net/en/latest/index.html)
- 
+
+## Books
+C# has many excellent books from many different authors.  While .NET Core is still very new and has not yet
+released the 1.0 version there are not many books about it yet specifically but if you are an 
+experienced developer wanting to learn C# the following books are excellent choices to learn more:
+ - [C# in Depth](http://amzn.to/1PUBo8A) by Jon Skeet
+ - [Effective C#](http://amzn.to/1UK88zq) by Bill Wagner
+ - [Professional ASP.NET MVC 5](http://amzn.to/1o6bh20) by Jon Galloway, Brad Wilson, K. Scott Allen, David Matson
+ - [C#6.0 and the .NET 4.6 Framework](http://amzn.to/1PUC8uh) by Andrew Troelsen and Philip Japikse
+
