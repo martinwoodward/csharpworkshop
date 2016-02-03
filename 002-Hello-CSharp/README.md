@@ -1,6 +1,7 @@
 # Hello C# World
-
 This file is part of a multi-series workshop on learning C# on Linux available [here](../README.md).
+
+Author: [Martin Woodward](https://github.com/MartinWoodward)
 
 Before you start you want to make sure that you have .NET Core installed and configured in your path
 ```

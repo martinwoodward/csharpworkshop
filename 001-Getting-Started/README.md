@@ -1,6 +1,8 @@
 #Getting Started with C# on Linux
 This file is part of a multi-series workshop on learning C# on Linux available [here](../README.md).
 
+Author: [Martin Woodward](https://github.com/MartinWoodward)
+
 First of all we want to get .NET Core installed on your environment.
 For instructions see http://dotnet.github.io/getting-started/ and follow the instructions for
 the platform of your choice.

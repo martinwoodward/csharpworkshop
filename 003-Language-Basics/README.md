@@ -1,6 +1,7 @@
 # C# Language Basics
-
 This file is part of a multi-series workshop on learning C# on Linux available [here](../README.md).
+
+Author: [Martin Woodward](https://github.com/MartinWoodward)
 
 In this tutorial we will quickly cover the basics of the C# language. Future tutorials will dig deeper into
 features such as Language Integrated Query (LINQ) and Asynchronous programming.
@@ -43,8 +44,8 @@ Note that C# has a `const` keyword that declares a constant at compilation time,
 practice to instead make use of the `static readonly` keywords to indicate to the compiler that a variable is a
 constant at runtime and does not change once created.
 
-In the example above we named our private constant with an underscore prefix and the variable was camelCased.
-This is purely by convention. The C# coding styles used by the .NET Core team themselves are 
+Variable and method naming is always fun. The convention is to use camalCased for private and PascalCased for class
+names, public methods and properties. The C# coding styles used by the .NET Core team themselves are 
 [available on GitHub](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md).
 
 ## Types
@@ -58,13 +59,13 @@ You can create your own types by defining a class for them and providing your im
 ```c#
     public class Food
     {
-        private string _foodStuff;
-        private int _howNice;
+        private string foodStuff;
+        private int howNice;
 
         public Food(string foodStuff, int howNice)
         {
-            _foodStuff = foodStuff;
-            _howNice = howNice;
+            this.foodStuff = foodStuff;
+            this.howNice = howNice;
         }
     }
 ```
@@ -89,13 +90,13 @@ an exception.
 ```c#
     public class Food
     {
-        private string _foodStuff;
-        private int _howNice;
+        private string foodStuff;
+        private int howNice;
 
         public Food(string foodStuff, int howNice)
         {
-            _foodStuff = foodStuff;
-            _howNice = howNice;
+            this.foodStuff = foodStuff;
+            this.howNice = howNice;
         }
 
         public virtual void Eat()
@@ -122,13 +123,15 @@ an exception.
     }
 ```
 
-Note that a colon (`:`) is used to indicate a class inherits from another class or interface. If providing a list of 
-multiple interfaces then they are comma (`,`) separated.  A `:` is also used by a constructor in a derived class
-to call a constructor in the base class (instead of something of using the `this` keyword like you would in a language 
-like Java).
-
-Also note that an Exception was thrown without it being explicitly declared. In c#, exceptions occur at runtime but may
-be caught using a `try`,`catch`,`finally` block.
+> **Note**
+> 
+> A colon (`:`) is used to indicate a class inherits from another class or interface. If providing a list of 
+> multiple interfaces then they are comma (`,`) separated.  A `:` is also used by a constructor in a derived class
+> to call a constructor in the base class (instead of something of using the `this` keyword like you would in a language 
+> like Java).
+> 
+> Also note that an Exception was thrown without it being explicitly declared. In c#, exceptions occur at runtime
+> but may be caught using a `try`,`catch`,`finally` block.
 
 For more information see the following sections of the C# Programming Guide
  - [Inheritance](https://msdn.microsoft.com/en-us/library/ms173149.aspx)
@@ -152,7 +155,7 @@ You can use all the operators you would expect for example
 The full range of operators in C# is available in the 
 [reference documentation](https://msdn.microsoft.com/en-us/library/6a71f45d.aspx)
 
-Note that assignment is performed using a single `=` where-as the double `==` is the test for equality.
+> **Note:** Assignment is performed using a single `=` where-as the double `==` is the test for equality.
 
 You can [implement operators in your own types](https://msdn.microsoft.com/en-us/library/8edha89s.aspx), or make use of some operators with common system types.
 For example to append strings you can do

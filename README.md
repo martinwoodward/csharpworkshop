@@ -20,6 +20,7 @@ but have experience with other programming languages.
  2. [Hello C# World](002-Hello-CSharp/) - Learn the structure of a basic C# program
  3. [C# Language Basics](003-Language-Basics/) - Learn the basics of the C# language such as variables, expressions
     control flow, loops, control flow, generics and more.
+ 4. [Properties](004-Properties) - Defining properties in C# classes
  
 More to follow...
 
