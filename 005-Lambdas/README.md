@@ -19,7 +19,6 @@ and then called. The following example demonstrates the use of a delegate.
 ```cs
 public class Program
 {
-
   // Declate a delegate that takes a string and returns a string
   public delegate string Reverse(string s);
 
@@ -55,7 +54,6 @@ Therefore instead of a custom type we can now make use of the `Func<>` delegate
 ```cs
 public class Program
 {
-
   static string ReverseString(string s)
   {
       return new string(s.Reverse().ToArray());
@@ -83,7 +81,6 @@ even numbers and then print them to the console.
 ```cs
 public class Program
 {
-
   public static void Main(string[] args)
   {
     List<int> list = new List<int>();
@@ -180,7 +177,7 @@ myDel("Bob");    // Writes out "Hello Bob!"
  - [Lambda expressions](https://msdn.microsoft.com/en-us/library/bb397687.aspx)
 
 ---
- - Next: [Tutorial 6 - TODO](../README.md)
+ - Next: [Tutorial 6 - Linq](../006-Linq/)
  - Previous: [Tutorial 4 - Properties](../004-Properties/)
  - Back to [Table of Contents](../README.md)
 
