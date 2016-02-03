@@ -315,6 +315,8 @@ or [`IEnumerable<T>`](https://msdn.microsoft.com/en-us/library/9eekhta0.aspx) in
 a `foreach` loop. `IEnumerable` is frequently used when passing around collections of data types and performing operations on them
 as we will see later.
 
+> **Note:** See the .NET Core documentation for [a deep-dive on Iterators and `foreach`](https://dotnet.github.io/docs/languages/csharp/iterators.html) 
+
 ## Exercises
   1. Create a HelloWorld application in .NET and allow a user to pass in a name to say hello to when running the
      application by typing `dotnet run Alice`
@@ -339,6 +341,7 @@ on them. In the following tutorial we will learn more about properties in C#.
  - [Composite String Formats](https://msdn.microsoft.com/en-us/library/txafckwd.aspx)
  - [if-else (C# Reference)](https://msdn.microsoft.com/en-us/library/5011f09h.aspx)
  - [Generics Overview](http://dotnet.github.io/docs/concepts/generics.html)
+ - [Iterators and `foreach`](https://dotnet.github.io/docs/languages/csharp/iterators.html)
 
 ---
  - Next: [Tutorial 4 - Properties](../004-Properties/)
