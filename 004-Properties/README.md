@@ -345,8 +345,8 @@ support the scenarios you need.
 	 - Date of Birth
  2. Store 3 people in a list and print out their details to the console
  3. Add a read-only property that returns the following information
-	 - Adult - a bool indicating if they are over 18 or not
 	 - Age - their current age (in years)
+	 - Adult - a bool indicating if they are over 18 or not
  4.	Add a property called `UserID` which can be explicitly set but will default to a practical first time value 
     if not defined
  
