@@ -33,13 +33,19 @@ This will create the following files in that directory
 Now we have an application, the next thing we have to do it tell NuGet to download the dependencies
 we need for our project. 
 
-### **NOTE - Temporary Hack for RHEL / Fedora Bug**
+### **NOTE - Temporary Hack for RHEL Bug**
 At the time of writing, the build for Fedora based distributions has a bug. To work-around this to
 be able to run your new application you need to do the following:
 ```
  dotnet restore --runtime "centos.7-x64"
  sed -ie 's:DNXCore,Version=v5.0/centos.7-x64:DNXCore,Version=v5.0/rhel.7.2-x64:g' project.lock.json
 ``` 
+You'll be needing to do this a lot, so until the bug is fixed you might want to create an alias by adding
+the following to your `.bashrc` file. That way instead of doing a `dotnet restore` you can type `dnr` to execute
+the two commands.
+```
+alias dnr='dotnet restore --runtime "centos.7-x64" && sed -ie ''s:DNXCore,Version=v5.0/centos.7-x64:DNXCore,Version=v5.0/rhel.7.2-x64:g'' project.lock.json'
+```
 
 If you are not on RHEL / Fedora then you can download the dependencies from NuGet by simply doing
 ```
