@@ -12,7 +12,7 @@ In this short workshop you will learn how to be productive with the new modern C
 what it is like building high performance web workloads in ASP.NET and what tooling support you have available.
 
 **Target Audience:** This workshop is aimed at developers with no prior knowledge of C#
-but have experience with other programming languages.
+but have some experience with other programming languages or would like a refresher on the modern C# language.
 
 ## Workshop Contents
 
@@ -23,10 +23,8 @@ but have experience with other programming languages.
  4. [Properties](004-Properties/) - Defining properties in C# classes
  5. [Delegates and Lambda expressions](005-Lambdas/) - Understanding delegates and lambda expressions in C#
  6. [LINQ](006-Linq/) - An introduction to Language Integrated Query (LINQ)
- 7. Asynchronous Programming
- 8. Building Web Applications with ASP.NET Core
- 
-More to follow...
+ 7. [Asynchronous Programming](007-Async/) - How to use .NET's built in support for asynchronous programming
+ 8. [ASP.NET](008-Asp.net/) - Building Web Applications with ASP.NET Core
 
 ## Additional Reading
 For more information and additional tutorials related to learning C# on Linux see the following. Note that the

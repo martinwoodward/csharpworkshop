@@ -275,7 +275,7 @@ consider using the [Task Parallel Library](https://msdn.microsoft.com/en-us/libr
    3. Take the list of people from Tutorial 4 and display them in age order, youngest first.
    4. Display the name of the oldest person in the list.
  
-## Conclusion
+## Summary
 In this tutorial you learned about the LINQ syntax introduced to C# 3.0 and saw how the same syntax is able to be
 used to query any `Enumerable` data source. You learned about the different ways of specifying a query and when
 one might be more expressive than another.
