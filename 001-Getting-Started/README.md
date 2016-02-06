@@ -22,8 +22,8 @@ with ```yum``` please do the following:
 ```
  1. Unpack the build somewhere (e.g. /opt/dotnet)
 ```
- sudo mkdir /opt/dotnet
- sudo tar xf dotnet-centos-x64.1.0.0.001088.tar.gz -C /opt/dotnet
+ mkdir /opt/dotnet
+ tar xf dotnet-centos-x64.1.0.0.001088.tar.gz -C /opt/dotnet
 ``` 
  1. Add `/opt/dotnet/bin` to your `PATH` and set `DOTNET_HOME` to `/opt/dotnet`. One way
     to do this is by adding the following to your `.bashrc` file.
