@@ -272,8 +272,8 @@ consider using the [Task Parallel Library](https://msdn.microsoft.com/en-us/libr
 ## Exercises
    1. Take the following paragraph and select the words that do not contain an 'e' `A penny saved is a penny earned. The early bird catches the worm. The pen is mightier than the sword."`
    2. Sort the words in the paragraph displaying the short ones first
-   3. Take the list of people from Tutorial 4 and display them in age order, youngest first.
-   4. Display the name of the oldest person in the list.
+   3. Take the list of people from [Tutorial 4](../004-Properties/Ex04/Program.cs) and display them in age order, youngest first.
+   4. Display the age of the oldest person in the list.
  
 ## Summary
 In this tutorial you learned about the LINQ syntax introduced to C# 3.0 and saw how the same syntax is able to be
