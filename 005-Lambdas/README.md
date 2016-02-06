@@ -167,7 +167,7 @@ myDel("Bob");    // Writes out "Hello Bob!"
 
  2. Extend your application to display the even numbers then the odd numbers
  
- 3. Take your application from Tutorial 4 (or the solution on GitHub) and use a `Func<PersonList,int>` delegate
+ 3. Take your application from Tutorial 4 ([or the solution on GitHub](../004-Properties/Ex04/Program.cs)) and use a `Func<PersonList,int>` delegate
     to calculate the average age of the people in your list and display it on the console
 
 
