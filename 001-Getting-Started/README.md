@@ -12,37 +12,37 @@ the platform of your choice.
 At the time of writing, the RPM packages for .NET Core are not publicly available. Therefore to install
 with ```yum``` please do the following:
 
- 1. Install the dependencies:
+ - Install the dependencies:
 ``` 
  sudo yum install –y libicu libuuid libcurl openssl libunwind
 ```
- 1. Download the latest dev build:
+ - Download the latest dev build:
 ```
  wget https://dotnetcli.blob.core.windows.net/dotnet/dev/Binaries/Latest/dotnet-centos-x64.latest.tar.gz
 ```
- 1. Unpack the build somewhere (e.g. /opt/dotnet)
+ - Unpack the build somewhere (e.g. $HOME/bin/dotnet)
 ```
- sudo mkdir /opt/dotnet
- sudo tar xf dotnet-centos-x64.latest.tar.gz -C /opt/dotnet
+ mkdir -p ~/bin/dotnet
+ tar xf dotnet-centos-x64.latest.tar.gz -C ~/bin/dotnet
 ``` 
- 1. Add `/opt/dotnet/bin` to your `PATH` and set `DOTNET_HOME` to `/opt/dotnet`. One way
+ - Add `/opt/dotnet/bin` to your `PATH` and set `DOTNET_HOME` to `/opt/dotnet`. One way
     to do this is by adding the following to your `.bashrc` file.
 ```
- export PATH=$PATH:/opt/dotnet/bin
- export DOTNET_HOME=/opt/dotnet
+ export PATH=$PATH:$HOME/bin/dotnet/bin
+ export DOTNET_HOME=$HOME/bin/dotnet
 ```
 
 ## Getting started on Ubuntu & Debian based distributions
 
 See http://dotnet.github.io/getting-started/ for the latest instructions, but essentially:
 
- 1. Add the dotnet apt-get feed
+ - Add the dotnet apt-get feed
 ```
 sudo sh -c 'echo "deb [arch=amd64] http://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
 sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
 sudo apt-get update
 ```
- 1. Install .NET Core
+ - Install .NET Core
 ```
 sudo apt-get install dotnet-nightly
 ```
