@@ -6,6 +6,8 @@ so feel free to contribute but I'll probably make some major
 changes here before porting the content over to somewhere official like
 the [.NET Core Docs](https://github.com/dotnet/core-docs).
 
+A copy of the introductory slide deck accompanying this tutorial is available [here](http://1drv.ms/1mkAqVm).
+
 ## Learning C# on Linux
 C# is a modern, advanced general purpose programming language and is now fully open source and supported on Linux.
 In this short workshop you will learn how to be productive with the new modern C# on Linux,
