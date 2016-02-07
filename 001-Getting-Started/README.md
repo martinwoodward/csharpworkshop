@@ -25,7 +25,7 @@ with ```yum``` please do the following:
  mkdir -p ~/bin/dotnet
  tar xf dotnet-centos-x64.latest.tar.gz -C ~/bin/dotnet
 ``` 
- - Add `/opt/dotnet/bin` to your `PATH` and set `DOTNET_HOME` to `/opt/dotnet`. One way
+ - Add `~/bin/dotnet/bin` to your `PATH` and set `DOTNET_HOME` to `~/bin/dotnet`. One way
     to do this is by adding the following to your `.bashrc` file.
 ```
  export PATH=$PATH:$HOME/bin/dotnet/bin
