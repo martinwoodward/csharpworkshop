@@ -16,7 +16,7 @@ with ```yum``` please do the following:
 ``` 
  sudo yum install –y libicu libuuid libcurl openssl libunwind
 ```
- 1. Download this alpha build (which is known good at the time of writing):
+ 1. Download the latest dev build:
 ```
  wget https://dotnetcli.blob.core.windows.net/dotnet/dev/Binaries/Latest/dotnet-centos-x64.latest.tar.gz
 ```
