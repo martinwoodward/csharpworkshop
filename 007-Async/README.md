@@ -290,15 +290,6 @@ namespace ConsoleApplication
 }
 
 ```
-**Dependencies**
-For the exercises, you will also need the following dependencies in your project.json
-```
-  "dependencies": {
-    "NETStandard.Library": "1.0.0-rc2*",
-    "System.Threading.Tasks": "4.0.11-rc3*",
-    "System.Threading.Thread": "4.0.0-rc3*"
-  }
-```
 
 ## Summary
 The use of `async` and `await` in C# helps .NET optimize the usage of processing threads and allows your application
