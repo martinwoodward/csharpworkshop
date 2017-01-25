@@ -26,8 +26,6 @@ This will create the following files in that directory
  - *Program.cs* - the actual program, with a basic Hello World sample ready to run
  - *project.json* - a meta-data file that describes the entire .NET project to the compiler 
    and other tooling.
- - *NuGet.Config* - the configuration of [NuGet](http://nuget.org) (the .NET package manager) 
-   for your project
 
 ## Getting ready to run
 Now we have an application, the next thing we have to do it tell NuGet to download the dependencies
