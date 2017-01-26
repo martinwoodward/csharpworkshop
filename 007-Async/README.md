@@ -294,10 +294,9 @@ namespace ConsoleApplication
 For the exercises, you will also need the following dependencies in your project.json
 ```
   "dependencies": {
-    "NETStandard.Library": "1.0.0-rc2*",
-    "System.Threading.Tasks": "4.0.11-rc3*",
-    "System.Threading.Thread": "4.0.0-rc3*"
-  }
+      "System.Threading.Tasks": "4.3.0",
+      "System.Threading.Thread": "4.3.0"
+  },
 ```
 
 ## Summary
