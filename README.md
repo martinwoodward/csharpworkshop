@@ -5,7 +5,7 @@ on Learning C# on Linux using .NET Core.  This is a work in progress
 so feel free to contribute. Also take a look at the official like
 the [C# Interactive Tutorial](https://www.microsoft.com/net/tutorials/csharp/getting-started).
 
-A copy of the introductory slide deck accompanying this tutorial is available [here](http://1drv.ms/1mkAqVm).
+A copy of the introductory slide deck accompanying this tutorial is available [here](https://1drv.ms/p/s!AnoZDWDiiqDHxd84US2gj0Kp_DAT4A).
 
 ## Learning C# on Linux
 C# is a modern, advanced general purpose programming language and is now fully open source and supported on Linux.
