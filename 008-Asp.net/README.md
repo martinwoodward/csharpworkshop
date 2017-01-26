@@ -1,7 +1,7 @@
 # Web Programming with ASP.NET Core
 This file is part of a multi-series workshop on learning C# on Linux available [here](../README.md).
 
-Author: [Bill Wagner](https://github.com/BillWagner)
+Author: [Bill Wagner](https://github.com/BillWagner), [Martin Woodward](https://github.com/martinwoodward)
 
 ## Getting Started
 The easiest way to get started with a new ASP.NET Core app is to go into a new directory and then use the `dotnet new -t web`
