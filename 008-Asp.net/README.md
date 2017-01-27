@@ -1,68 +1,40 @@
 # Web Programming with ASP.NET Core
 This file is part of a multi-series workshop on learning C# on Linux available [here](../README.md).
 
-Author: [Bill Wagner](https://github.com/BillWagner)
+Author: [Bill Wagner](https://github.com/BillWagner), [Martin Woodward](https://github.com/martinwoodward)
 
-> **Note: **  At the time of writing for the DevConf 2016 conference the new `dotnet` command wasn't in place
-> to support ASP.NET applications. Therefore we'll need to fall back to using the bits from RC1 in Nov 2015
-> These bits do not include support for Fedora or RHEL (though they work on CentOS and Ubuntu). 
-
-## Prerequisites and Installation
-The simplest way to install the latest ASP.NET Core bits is to visit http://get.asp.net. The home page
-detects your operating system, and will direct you to download the ASP.NET tools for your operating system.
-
-Once you’ve installed the runtime, you’ll need to install the tools on your machine following 
-[these instructions](https://docs.asp.net/en/latest/getting-started/index.html)
-
-Once installed, be sure to install the RC1 version of .NET core by typing `dnvm upgrade -r coreclr`. For CentOS ensure mono is installed and type `dnvm upgrade -r mono`
-
-To get the rest of the template tooling, you’ll need to install yeoman, bower, the grunt CLI and gulp. Then
-install the ASP.NET website generator template to get started quickly
+## Getting Started
+The easiest way to get started with a new ASP.NET Core app is to go into a new directory and then use the `dotnet new -t web`
+command to specify that you want to create a new application with the web template.
 ```
-sudo npm install -g yo bower grunt-cli gulp
-sudo npm install -g generator-aspnet
+dotnet new -t web
+dotnet restore
+dotnet run
 ```
 
-## ASP.NET Scaffolding
-You can generated an ASP.NET core site by running the yeoman generator:
+By default, a new ASP.NET application listens on port 5000. Therefore if you open a browser on http://localhost:5000 you should be
+able to see your new website.
+
+## Web Applications Basics
+The first thing to understand is that in .NET Core, and ASP.NET web application is just a console application.  If you open `Program.cs` you can examine the Main method to see how the application runs the WebHost.  You can easily modify this, for example if you want the web server to listen on port 8080 on all interfaces rather than just port 5000 on localhost you could modify your Main method as follows
 ```
-yo aspnet
+public static void Main(string[] args)
+{
+    var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .UseUrls("http://*:8080")
+                .Build();
+    host.Run();
+}
 ```
-This give you the option to build five different starter applications. One of the great features of the ASP.NET
-ecosystem is that the tools generate boiler plate example code for many common scenarios. The downside of this boilerplate code is that it is easy to create an application that has code you don’t need for features that aren’t
-intended for your site.
+If you take a look at `project.json` you'll also see that this contains much more information now. There are many more dependencies now, but also the publish options contain additional information on how the application should be prepared when performing a `dotnet publish` in order to deploy.
 
-To avoid the downsides, let’s create an application using each of the website templates, and examine the code that’s created from the templates. All the templates have a common workflow: After you create the starter application, you’ll run three commands to install all dependencies, build the application, and run it:
+The `web.config` file contains basic configuration information for the web application and is parsed by framework libraries in ASP.NET.
 
- - `dnu restore` - Equivalent to `dotnet restore` in the newer bits. `dnu restore` will download and install all 
-    the NuGet packages are required for this project. NuGet (www.nuget.org) is a .NET package manager. The list of packages to download will be located in the project.json file, under the “dependencies” node. Each of the templates have a different list of dependencies that are installed.
-
- - `dnu build` - Equivalent to `dotnet build`. This command builds your application. It will launch the C# compiler and create the assemblies from your source files. Technically, it is optional, the build will run as a pre-cursor to launching your site using the next command, but it is sometimes useful to get more data about compilation errors
-
- - `dnx web` - This will build your application (if it’s not already built), and then launch the application (web
- server). The command line tool will tell you what port your application is running on. 
-
-Let’s examine each of the web – application template code in detail. The code generated by each of the templates provides a great reference implementation for different features in an ASP.NET application. We’ll start with the simplest, and more on to more sophisticated applications
-
-### Empty Application
-You get this application by selecting the “Empty Application” option from the yeoman. It creates the equivalent of a “Hello World!” web application. This is a good starting point to explain the core features of an asp.net web application. Like a console application, there are two files that make up the bulk of the application: `project.json`, and `startup.cs`. `project.json` is the file that describes the project. The important nodes are the `dependencies` node, the `commands` node, and the `frameworks` node.
-
- - `Dependencies`, as we’ve already discussed, lists the NuGet packages that that are needed for this application. The Empty template depends only on the web server.
-
- - `commands` describes the commands available for this application. When you type `dnx web`, you’re running the `web` command from this section. It launches the [Kestrel web server](https://github.com/aspnet/KestrelHttpServer), and loads the web application.
-
- - `frameworks` determines which .NET framework is in use. The `dnxcore50` framework represents the portable version of the .NET framework.
- 
-The code for the application is in `Startup.cs`. That’s a standard C# file, and in the case of the empty application, it represents the entire application. The entry point for the application is at the bottom of the file, in the `Main()` method. The template uses an expression bodied member to define the method. (That’s the `=>` syntax followed by a single expression.) That member launches the web server, and uses the `Startup` class as the class that defines the web application.
-
-The other interesting method here is the `Configure()` method. This is a minimal web application that responds to any HTTP request with the string `Hello World!`.  This application shows an important architecture decision in ASP.NET Core that may seem obvious but you don’t include any features your application doesn’t need. As you’ll see with the other templates, more features means more services are setup in the `Configure()` method.
-
-The other files that are created by this template are a `Dockerfile`, if you want to install this application in a Docker container, and a `web.config` file that contains basic configuration information for the web application and is parsed by framework libraries in ASP.NET.
- 
-### Web Application Basic
-Next, let’s look at the starter project generated by the `Web Application Basic` project. This project provides much of the framework needed for a public web site. This public application uses the ASP.NET Model View Controller (MVC) framework.
-
-Let’s start by looking at the additional code in `startup.cs`. This startup code enables other features in ASP.NET that are part of this web application. First, there’s a call to `UseStaticFiles()`. This method enables delivery of static files like images or javascript files from the web server file system. Second, there’s a call to `UseMvc()`, which enables the MVC framework in this application:
+We can also take a look at the additional code in `Startup.cs`. This startup code enables other features in ASP.NET that are part of this web application. Within the `Configure` method, there’s a call to `UseStaticFiles()`. This method enables delivery of static files like images or javascript files from the web server file system. Second, there’s a call to `UseMvc()`, which enables the MVC framework in this application:
 ```c#
 app.UseMvc(routes =>
 {
@@ -81,8 +53,6 @@ The second portion of the route maps to a method name in that controller. The de
  
 The final portion maps to a single argument, named `id`. The `?` defines that this argument is optional. If the argument is supplied, it would be converted to the type specified on the Controller method.
 
-Next, let’s look at `project.json`. The `dependencies` node has several more libraries that are used in this project. The different packages are part of the ASP.NET framework. 
-
 Next, let’s look at the new files created by this template. We’ll start with `gulpfile.js`. This file defines many of the build tasks related to client side assets (javascript, css files). As you build more ASP.NET projects, you’ll learn that ASP.NET uses standard web tools for many client side web development tasks.
 
 The other major sections are the `Controllers` directory, and the `Views` directory. The controller directory has the `HomeController` class. The `HomeController` provides an example of an MVC Controller. A Controller is responsible for generating the response from an HTTP request. Notice that all the methods in the HomeController end with a call to `View()`. The `View()` method is a member of the Controller base class. This method generates the HTML response by looking for a View template, which we’ll discuss shortly. You can see the four methods that map to the four URLs that are configured in this application.
@@ -93,42 +63,30 @@ You can see that the MVC framework follows these conventions to make it easier t
 
 The remaining assets are the images and css styles that are part of the starter application.
 
-### Web Application
-The web application template creates a web application that includes account management. It includes more features than the basic web application. This application includes Entity Framework and drivers for SQL Lite as a database storage medium for the account management.
+## Yeoman Scaffolding
+While the `dotnet` command has some basic templating features, and more are being added all the time you can also make use
+of the popular Yeoman tool to help you scaffold and ASP.NET application.
 
-Let’s start with the addition of EntityFramework and SQL Lite. SQL Lite is a platform independent database engine that runs on all the platforms supported by .NET Core. Entity Framework is an Object Relational Mapper (ORM) that enables you to write C# code that queries or updates the database storage.
+You’ll need to install yeoman, bower, the grunt CLI and gulp. Then
+install the ASP.NET website generator template to get started quickly
+```
+sudo npm install -g yo bower grunt-cli gulp
+sudo npm install -g generator-aspnet
+```
 
-The Models folder contains the new classes that represent the database model. The model created is entirely managed by the base framework: the ApplicationUser class represents a user (implemented by its base class, IdentityUser), and the ApplicationDBContext contains a collection of ApplicationUser objects, representing all the users that have registered on the site.
-
-Tools provided with EntityFramework manage the configuration of the database using Migrations. The initial migration is built as part of the template in the Migrations folder. These files (and later migrations like them) are created by a tool; it’s not necessary that you write these migrations on every change. These migrations create the tables, keys, and relationships between tables in the database. Each migration is created by comparing the Class definitions for the database object model with the database definition. The migration will make the necessary modifications to the database and create a new migration class that when run will update the database.
-The remaining new functionality is in the AccountController and the associated Account views. This functionality provides the current practices for enabling users to create accounts on the website. It supports email authentication, password reset via email, and related features. The generated code follows current design guidance on handling user secrets: passwords are not stored as clear text, but are stored as hashes created with a secret and a salt.
-
-The generated code also supports two factor authentication, and can be easily extended to support external providers such as Facebook, Twitter, Google, and Microsoft accounts.
-
-All this extra functionality is configured in `Startup.cs`. The `Configure()` method configures EntityFrameowrk, the Identity services, and the email sending services.
-
-What you’ll also notice in this version of the started application is that ASP.NET has its own built in Dependency Injection library. This component enables you replace any of these dependencies while unit testing the controllers and other components in your application.
-
-With one last look at `project.json`, you can see this new reflected in your project. There are several new dependencies that will be included in this project. There is also a new command available for DNX: the `ef` command. The `dnx ef` command provides the tooling to update the database schema, create and run migrations, and more. 
-
-This template is, by far, the most common to start with. It provides the code for most common scenarios in modern website development.
-
-### Web API Application
-The WebAPIApplication template creates the boilerplate for an application that contains a REST service. It does not contain the account controller, or the database support that is included with the WebApplication template discussed above.
-
-The only addition is an example WebAPI controller that implements a REST-ful interface. The Controllers/ValueController.cs class shows the basic format for a WEB API controller. The controller uses Attributes to define route to this controller, and the HTTP verbs that map to each method. Like the MVC Controller, the class name maps to the part of the URL. The convention is that webapi routes use “/api/[controllername]” as the route.
-The methods map to the different HTTP Verbs used in REST: HTTP GET (list, or single item), HTTP POST (create new item), HTTP PUT (update item), and HTTP DELETE (delete item). The Get, Put, and Delete methods all take a single parameter that identifies the object being referenced.
-
-The template code doesn’t provide a full implementation backed by a persistent datastore, but it does provide the basic format of a WebAPI controller. You can see that the controller returns objects, or has a void return. When the controller returns objects, the MVC infrastructure converts those objects to JSON or XML format, whichever is requested by the client. The MVC infrastructure also converts incoming JSON or XML request payloads to objects for the PUT and POST methods. This template provides sample code on the attributes necessary to create the controller for a REST service in MVC.
-
-### Nancy ASP.NET Application
-This template builds the core of a Nancy based web application. Nancy based applications are a different framework, and outside of the scope of this document.
-
+You can generated an ASP.NET core site by running the yeoman generator:
+```
+yo aspnet
+```
+This give you the option to build several different starter applications. One of the great features of the ASP.NET
+ecosystem is that the tools generate boiler plate example code for many common scenarios. The downside of this boilerplate code is that it is easy to create an application that has code you don’t need for features that aren’t
+intended for your site.
     
 ## Summary
-In this tutorial we explored ASP.NET Core and examined the templates available through `yoeman`.  
+In this tutorial we explored ASP.NET Core and examined the default starter template. For more information, [Jon Galloway has an extensive workshop on ASP.NET](https://github.com/jongalloway/aspnetcore-workshop).   
 
 ## Additional Information
+ - [ASP.NET Workshop](https://github.com/jongalloway/aspnetcore-workshop)
  - [ASP.NET Documentation](https://docs.asp.net)
  - [Visual Studio Code](https://code.visualstudio.com/)
  - [OmniSharp](http://www.omnisharp.net/)
