@@ -2,8 +2,11 @@
 
 This repository contains the content for a workshop I am putting together
 on Learning C# on Linux using .NET Core.  This is a work in progress 
-so feel free to contribute. Also take a look at the official like
-the [C# Interactive Tutorial](https://www.microsoft.com/net/tutorials/csharp/getting-started).
+so feel free to contribute.
+
+Also take a look at the official Microsoft [C# Interactive Tutorial](https://www.microsoft.com/net/tutorials/csharp/getting-started).
+Note that the online tutorial contains an interactive playground environment allowing you to try out the
+majority of the C# code in these exercises as well is you don't wish to install the `dotnet` environment on your machine.
 
 A copy of the introductory slide deck accompanying this tutorial is available [here](https://1drv.ms/p/s!AnoZDWDiiqDHxd84US2gj0Kp_DAT4A).
 
