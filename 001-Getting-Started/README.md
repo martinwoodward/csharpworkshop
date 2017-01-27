@@ -15,6 +15,12 @@ for Fedora 23 & 24). Therefore we must install from source - see the
 
 If you would like to install the very latest (Daily Build) of .NET core then take a look at the [dotnet/core-setup](https://github.com/dotnet/core-setup/blob/master/README.md) repo.
 
+Alternativelu
+```
+sudo dnf copr enable nmilosev/dotnet-clean
+sudo dnf install dotnetcore -y
+```
+
 ## Conclusion
 That's it - before moving on from this point you should have dotnet installed on your system. You should be able to 
 type `dotnet --version` to verify. Next, lets create a new application 
